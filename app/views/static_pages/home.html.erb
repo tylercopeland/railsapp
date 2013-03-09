@@ -1,7 +1,12 @@
-<div class="center hero-unit">
-	<h1>Welcome to One Month Rails</h1>
-	<h2>You've found the home page for <a href="http://omrails.com/">One Month Rails</a> first application.</h2>
+<% if user_signed_in? %>
+	#show them something
 	
-	<%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
-	
-</div>
+<% else %> 
+	<div class="center hero-unit">
+		<h1>Welcome to One Month Rails</h1>
+		<h2>You've found the home page for <a href="http://omrails.com/">One Month Rails</a> first application.</h2>
+		
+		<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+		
+	</div>
+<% end %>
